@@ -2,7 +2,13 @@ class Api::V1::CompaniesController < ApplicationController
   def index
     scraper = Scraper.new(params[:n].to_i, filter_params)
     companies = scraper.scrape
-    render csv: companies_to_csv(companies)
+    csv_data = companies_to_csv(companies)
+    File.write('/home/kanha/Konnector/yc_scraper_api/companies.csv', csv_data)
+
+    respond_to do |format|
+      # format.html { render :index }
+      format.csv { send_data companies_to_csv(companies), filename: "companies.csv" }
+    end
   end
 
   private
