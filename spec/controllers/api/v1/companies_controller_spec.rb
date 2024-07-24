@@ -34,7 +34,7 @@ RSpec.describe Api::V1::CompaniesController, type: :controller do
       first_company = csv_data.first
       expect(first_company['Name']).to eq('Reshape Biotech')
       expect(first_company['Location']).to eq('Copenhagen, Denmark')
-      expect(first_company['Description']).to eq('A healthcare startup.')
+      expect(first_company['Description']).to eq('Robots that automate the everyday tasks of microbiologists.')
       expect(first_company['Batch']).to eq('W21')
       expect(first_company['Website']).to eq('https://www.samplecompany.com')
       expect(first_company['Founders']).to include('Jane Doe (https://www.linkedin.com/in/janedoe)')

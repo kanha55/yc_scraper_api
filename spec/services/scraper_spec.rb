@@ -38,7 +38,7 @@ RSpec.describe Scraper, type: :service do
 
         expect(company[:name]).to eq('Reshape Biotech')
         expect(company[:location]).to eq('Copenhagen, Denmark')
-        expect(company[:description]).to eq('A healthcare startup.')
+        expect(company[:description]).to eq('Robots that automate the everyday tasks of microbiologists.')
         expect(company[:batch]).to eq('W21')
         expect(company[:website]).to eq('https://www.samplecompany.com')
         expect(company[:founders].first[:name]).to eq('Jane Doe')
